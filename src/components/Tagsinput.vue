@@ -6,10 +6,10 @@
 
     <input 
     type="text" 
-    :value="newTag" 
+    v-model="newTag"
     @keydown.enter="tags.push($event.target.value)"
     @keydown.tab.prevent="tags.push($event.target.value)"
-    @input="newTag = $event.target.value"
+    
     />
     
 </template>
