@@ -1,6 +1,9 @@
 <template>
   
-    <div v-for="(tag, index) in tags">{{ index + " : " + tag}}</div>
+    <div v-for="(tag, index) in tags">
+        {{tag}}
+     <a @click.prevent="removeTag(index)" href="#">&times;</a>
+    </div>
     <hr>
     {{ newTag }}
 
@@ -31,6 +34,9 @@ export default {
 
             }
             
+        },
+        removeTag(index){
+            this.tags.splice(index, 1)
         }
     }
 
