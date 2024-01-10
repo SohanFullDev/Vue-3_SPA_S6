@@ -6,7 +6,7 @@
 
     <input 
     type="text" 
-    v-model="newTag"
+    v-model.trim="newTag"
     @keydown.enter="tags.push($event.target.value)"
     @keydown.tab.prevent="tags.push($event.target.value)"
     
