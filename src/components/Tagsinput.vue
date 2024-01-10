@@ -11,6 +11,7 @@
     type="text" 
     v-model.trim="newTag"
     @keydown.enter="addNewTag"
+    @keydown.delete="removeLastTag"
     @keydown.tab.prevent="addNewTag"
     
     />
@@ -37,6 +38,11 @@ export default {
         },
         removeTag(index){
             this.tags.splice(index, 1)
+        },
+        removeLastTag(){
+            if(this.newTag.length==0){
+                this.removeTag(this.tags.length - 1)
+            }
         }
     }
 
