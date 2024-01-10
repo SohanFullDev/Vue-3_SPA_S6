@@ -6,6 +6,7 @@
 
     <!-- <input type="text" v-bind:value="newTag"/> -->
     <input type="text" :value="newTag"/>
+    <button v-on:click="tags.push(newTag)">OK</button>
 </template>
 <script>
 
