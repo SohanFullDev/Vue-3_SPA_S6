@@ -7,8 +7,8 @@
     <input 
     type="text" 
     v-model.trim="newTag"
-    @keydown.enter="tags.push($event.target.value)"
-    @keydown.tab.prevent="tags.push($event.target.value)"
+    @keydown.enter="addNewTag"
+    @keydown.tab.prevent="addNewTag"
     
     />
     
@@ -21,7 +21,18 @@ export default {
         //tags:[]
         tags:["vue", "react", "angular"],
         newTag: "preact"
-    })
+    }),
+    methods: {
+
+        addNewTag(){
+            if(this.newTag){
+                this.tags.push(this.newTag)
+                this.newTag = ""
+
+            }
+            
+        }
+    }
 
 }
 
