@@ -4,6 +4,7 @@ import TagsInput from './components/Tagsinput.vue';
 export default {
 
    data: () =>({
+    //jsFrameworks: ["react.js","vue.js","angular"]
     jsFrameworks: ["react.js","vue.js","angular"]
 
    }),
@@ -20,6 +21,7 @@ export default {
 <template>
   <h1>Hello! This is Sohan</h1>
  
+  <!-- <tags-input :selected-tags="jsFrameworks" /> -->
   <tags-input :selected-tags="jsFrameworks" />
  
 </template>
