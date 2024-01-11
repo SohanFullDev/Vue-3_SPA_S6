@@ -37,8 +37,12 @@ export default {
         newTag: "preact"
     }),
     watch: {
-        newTag(newVal, oldVal){
-            console.log(newVal, oldVal);
+        newTag(newVal){
+            //console.log(newVal, oldVal);
+            if(newVal.indexOf(",") > -1){
+                this.newTag = this.newTag.slice(0, -1)//ei line chara aghe ekbar test hobe
+                this.addNewTag();
+            }
         }
 
     },
