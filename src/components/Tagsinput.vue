@@ -36,6 +36,12 @@ export default {
         tags:["vue", "react", "angular"],
         newTag: "preact"
     }),
+    watch: {
+        newTag(newVal, oldVal){
+            console.log(newVal, oldVal);
+        }
+
+    },
     computed:{
         isTagExists(){
             return this.tags.includes(this.newTag);
