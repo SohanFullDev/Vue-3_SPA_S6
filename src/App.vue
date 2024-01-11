@@ -5,7 +5,8 @@ export default {
 
    data: () =>({
     //jsFrameworks: ["react.js","vue.js","angular"]
-    jsFrameworks: ["react.js","vue.js","angular"]
+    jsFrameworks: ["react.js","vue.js","angular"],
+    backendFrameworks: []
 
    }),
    /*
@@ -27,10 +28,16 @@ export default {
 
 </script>
 <template>
-  <h1>Hello! This is Sohan</h1>
+  <h1>Your Favorite Frameworks</h1>
   <div>{{ jsFrameworks }}</div>
   <!-- <tags-input :selected-tags="jsFrameworks" /> -->
   <tags-input :selected-tags="jsFrameworks" @change="handleChange"/>
+
+  <div>{{ backendFrameworks }}</div>
+  <tags-input 
+  :selected-tags="backendFrameworks"
+   @change="backendFrameworks = [...$event]"
+   />
  
 </template>
 
