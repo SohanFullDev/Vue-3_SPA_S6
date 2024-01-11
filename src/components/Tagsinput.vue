@@ -23,7 +23,7 @@
   export default {
    data(){
         return {
-            tags:[...this.selectedTags],
+            tags: this.selectedTags,
             newTag: "",
         }
    },

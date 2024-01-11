@@ -20,7 +20,7 @@ export default {
 </script>
 <template>
   <h1>Hello! This is Sohan</h1>
- 
+  <div>{{ jsFrameworks }}</div>
   <!-- <tags-input :selected-tags="jsFrameworks" /> -->
   <tags-input :selected-tags="jsFrameworks" />
  
