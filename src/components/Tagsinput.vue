@@ -22,7 +22,7 @@
     @keydown.enter="addNewTag"
     @keydown.delete="removeLastTag"
     @keydown.tab.prevent="addNewTag"
-    :class="tags.includes(newTag) ? 'tag-exists': ''"
+    :class="{ 'tag-exists': tags.includes(newTag)}"
     
     />
     
