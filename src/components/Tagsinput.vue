@@ -7,12 +7,22 @@
     <hr>
     {{ newTag }}
 
+  <!--   <input 
+    type="text" 
+    v-model.trim="newTag"
+    @keydown.enter="addNewTag"
+    @keydown.delete="removeLastTag"
+    @keydown.tab.prevent="addNewTag"
+    style="color:red"
+    
+    /> -->
     <input 
     type="text" 
     v-model.trim="newTag"
     @keydown.enter="addNewTag"
     @keydown.delete="removeLastTag"
     @keydown.tab.prevent="addNewTag"
+    :style="tags.includes(newTag) ? { color: 'red', 'text-decoration': 'line-through' } : {}"
     
     />
     
