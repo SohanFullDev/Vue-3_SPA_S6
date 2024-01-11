@@ -3,9 +3,16 @@ import TagsInput from './components/Tagsinput.vue';
 
 export default {
 
-  components: {
-    // TagsInput
-  }
+   data: () =>({
+    jsFrameworks: ["react.js","vue.js","angular"]
+
+   }),
+   mounted(){
+    setTimeout(()=> {
+       this.jsFrameworks.push("svelte.js")
+    }, 3000)
+
+   }
 
 }
 
@@ -13,7 +20,7 @@ export default {
 <template>
   <h1>Hello! This is Sohan</h1>
  
-  <tags-input/>
+  <tags-input :selected-tags="jsFrameworks" />
  
 </template>
 

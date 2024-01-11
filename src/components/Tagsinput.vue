@@ -1,4 +1,9 @@
 <template>
+
+    <div>
+        selected tags: {{ selectedTags }}
+    </div>
+
     <div class="tags-input-wrapper">
       <span class="tag-item" v-for="(tag, index) in tags" :key="index">
         {{ tag }}
@@ -24,6 +29,8 @@
       tags: ["vue", "react", "angular"],
       newTag: "",
     }),
+    props: ["selectedTags"],
+
     watch: {
       newTag(newVal) {
         if (newVal.indexOf(",") > -1) {
