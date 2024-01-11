@@ -22,7 +22,7 @@
     @keydown.enter="addNewTag"
     @keydown.delete="removeLastTag"
     @keydown.tab.prevent="addNewTag"
-    :style="tags.includes(newTag) ? { color: 'red', 'text-decoration': 'line-through' } : {}"
+    :class="tags.includes(newTag) ? 'tag-exists': ''"
     
     />
     
@@ -59,3 +59,10 @@ export default {
 }
 
 </script>
+<style scoped>
+.tag-exists{
+    color: red;
+    text-decoration: line-through;
+}
+
+</style>
