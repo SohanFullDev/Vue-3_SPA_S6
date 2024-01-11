@@ -22,7 +22,7 @@
     @keydown.enter="addNewTag"
     @keydown.delete="removeLastTag"
     @keydown.tab.prevent="addNewTag"
-    :class="{ 'tag-exists': tags.includes(newTag)}"
+    :class="{ 'tag-exists': isTagExists }"
     
     />
     
@@ -36,10 +36,17 @@ export default {
         tags:["vue", "react", "angular"],
         newTag: "preact"
     }),
+    computed:{
+        isTagExists(){
+            return this.tags.includes(this.newTag);
+        }
+
+    },
     methods: {
 
         addNewTag(){
-            if(this.newTag){
+            //if(this.newTag && !this.tags.includes(this.newTag)){
+                if(this.newTag && !this.isTagExists){
                 this.tags.push(this.newTag)
                 this.newTag = ""
 
